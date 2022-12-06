@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel administratora - lista zleceń</title>
+    <link th:href="@{static}" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .column {
+            flex: 50%;
+            padding: 10px;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg" style="background-color: #d42811">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/admin" style="color: black">Panel administratora - lista zleceń</a>
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="waves-effect waves-light btn nav-link" href="/ordersAdmin" style="color: black;background-color: #bd240f">Zlecenia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="waves-effect waves-light btn nav-link" href="/storeAdmin" style="color: black;background-color: #bd240f">Magazyn</a>
+                </li>
+                <li class="nav-item">
+                    <a class="waves-effect waves-light btn nav-link" href="/logout" style="color: black;background-color: #bd240f">Wyloguj się</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--Search Panel-->
+<p></p>
+<div class="container">
+    <div class="form-inline justify-content-center">
+        <form method="GET" th:action="@{ordersAdmin}">
+            <input type="text" class="form-control" id="txtSearch" name="parameter" placeholder="Szukaj zlecenia...">
+            <button type="submit" class="btn" style="background-color:  #fad185">Szukaj</button>
+        </form>
+    </div>
+</div>
+<p></p>
+<!-- Orders List -->
+<nav class="nav flex-column" style="background-color:  #fce3b6">
+    <!--<h2 style="color: black">Rezerwacje</h2>-->
+    <table border="1">
+        <tr>
+            <th style="color: black; background-color: #fad185">Data dodania zlecenia</th>
+            <th style="color: black; background-color: #fad185">Termin realizacji zlecenia</th>
+            <th style="color: black; background-color: #fad185">Imię pacjenta</th>
+            <th style="color: black; background-color: #fad185">Nazwisko pacjenta</th>
+            <th style="color: black; background-color: #fad185">Rodzaj zlecenia</th>
+            <th style="color: black; background-color: #fad185">Uwagi</th>
+            <th style="color: black; background-color: #fad185">Status</th>
+            <th style="color: black; background-color: #fad185">Moderator</th>
+            <th style="color: black; background-color: #fad185"></th>
+        </tr>
+        <tr th:each = "Orders: ${ordersAdmin}">
+            <td th:text="${Orders.DateFrom}" style="color: black"/>
+            <td th:text="${Orders.DateTo}" style="color: black"/>
+            <td th:text="${Orders.PatientName}" style="color: black"/>
+            <td th:text="${Orders.PatientSurname}" style="color: black"/>
+            <td th:text="${Orders.OrderType}" style="color: black"/>
+            <td th:text="${Orders.Info}" style="color: black"/>
+            <td th:text="${Orders.Status}" style="color: black"/>
+            <td th:text="${Orders.getUsername}" style="color: black"/>
+           <!-- <td><button type="button" class="btn btn-danger ml-2" data-mdb-toggle="modal" data-mdb-target="#deleteModal">Usuń</button></td>
+           -->
+            <!-- Button to Open the Modal -->
+           <td><button type="button" class="btn btn-danger" data-toggle="modal" th:attr="data-target='#deleteModal'+${Orders.id}">Usuń</button></td>
+            <!-- The Modal -->
+            <div class="modal" th:attr="id='deleteModal'+${Orders.id}">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Usuń zlecenie</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            Czy na pewno chcesz usunąć wybrane zlecenie?
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <a class="btn btn-danger" th:href="@{/deleteOrder(deleteOrderId=${Orders.Id})}">Usuń</a>
+                            <span></span>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Zamknij</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </tr>
+    </table>
+</nav>
+<!--Pagination-->
+<p></p>
+<nav aria-label="Page navigation example" id="pageNo">
+    <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" style="background-color: #d42811; color: black" href="/ordersAdmin1">1</a></li>
+        <li class="page-item"><a class="page-link" style="background-color: #d42811; color: black" href="/ordersAdmin2">2</a></li>
+        <li class="page-item"><a class="page-link" style="background-color: #d42811; color: black" href="/ordersAdmin3">3</a></li>
+        <li class="page-item"><a class="page-link" style="background-color: #d42811; color: black" href="/ordersAdmin4">4</a></li>
+        <li class="page-item"><a class="page-link" style="background-color: #d42811; color: black" href="/ordersAdmin5">5</a></li>
+        <li class="page-item"><a class="page-link" style="background-color: #d42811; color: black" href="/ordersAdmin6">6</a></li>
+        <li class="page-item"><a class="page-link" style="background-color: #d42811; color: black" href="/ordersAdmin7">7</a></li>
+        <li class="page-item"><a class="page-link" style="background-color: #d42811; color: black" href="/ordersAdmin8">8</a></li>
+        <li class="page-item"><a class="page-link" style="background-color: #d42811; color: black" href="/ordersAdmin9">9</a></li>
+        <li class="page-item"><a class="page-link" style="background-color: #d42811; color: black" href="/ordersAdmin10">10</a></li>
+        <li class="page-item"><a class="page-link" style="background-color: #d42811; color: black" href="/ordersAdmin11">11</a></li>
+        <li class="page-item"><a class="page-link" style="background-color: #d42811; color: black" href="/ordersAdmin12">12</a></li>
+    </ul>
+</nav>
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+    <section class="">
+        <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Linki</h6>
+                    <p>
+                        <a href="/" class="text-reset" style="color: black">Strefa pacjenta </a>
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-left">
+
+                    <h6 class="text-uppercase fw-bold mb-4">Kontakt</h6>
+                    <p><i class="fas fa-home me-3"></i> ul. Kaliskiego</p>
+                    <p><i class="fas fa-home me-3"></i> 85-123 Bydgoszcz</p>
+                    <p>
+                        <i class="fas fa-envelope me-3"></i>
+                        E-mail: dentist@example.com
+                    </p>
+                    <p><i class="fas fa-phone me-3"></i>Tel: +48 123 456 789</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

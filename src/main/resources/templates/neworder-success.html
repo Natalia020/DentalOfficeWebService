@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel stomatologa - Nowe zlecenie</title>
+  <link th:href="@{static}" rel="stylesheet">
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg" style="background-color: #987a9f">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/dentist" style="color: black">Panel stomatologa - Nowe zlecenie</a>
+    <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="waves-effect waves-light btn nav-link" href="/ordersDent" style="color: black;background-color: #8c6b94">Zlecenia dla technika</a>
+        </li>
+        <li class="nav-item">
+          <a class="waves-effect waves-light btn nav-link" href="/store" style="color: black;background-color: #8c6b94">Magazyn</a>
+        </li>
+        <li class="nav-item">
+          <a class="waves-effect waves-light btn nav-link" href="/logout" style="color: black;background-color: #8c6b94">Wyloguj się</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Confirm-->
+<h3 style="background-color: palegreen">Dodałeś nowe zlecenie pomyślnie...!</h3>
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <div class="row mt-3">
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Linki</h6>
+          <p>
+            <a href="/" class="text-reset" style="color: black">Strefa pacjenta </a>
+          </p>
+        </div>
+
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-left">
+
+          <h6 class="text-uppercase fw-bold mb-4">Kontakt</h6>
+          <p><i class="fas fa-home me-3"></i> ul. Kaliskiego</p>
+          <p><i class="fas fa-home me-3"></i> 85-123 Bydgoszcz</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            E-mail: dentist@example.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i>Tel: +48 123 456 789</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</footer>
+</body>
+</html>

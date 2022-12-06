@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel stomatologa - Nowe zlecenie</title>
+  <link th:href="@{static}" rel="stylesheet">
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg" style="background-color: #987a9f">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/dentist" style="color: black">Panel stomatologa - Nowe zlecenie</a>
+    <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="waves-effect waves-light btn nav-link" href="/ordersDent" style="color: black;background-color: #8c6b94">Zlecenia dla technika</a>
+        </li>
+        <li class="nav-item">
+          <a class="waves-effect waves-light btn nav-link" href="/store" style="color: black;background-color: #8c6b94">Magazyn</a>
+        </li>
+        <li class="nav-item">
+          <a class="waves-effect waves-light btn nav-link" href="/logout" style="color: black;background-color: #8c6b94">Wyloguj się</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Order Form-->
+<div class="container"> <!--align="center"-->
+  <h3>Nowe zlecenie</h3>
+  <hr/>
+  <form action="/order-confirm" th:object="${orderForm}" method="POST">
+    <p style="color: black">Data dodania zlecenia <input type="date" name="dateFrom" class="form-control col-4 mb-4"></p>
+    <p style="color: black">Termin realizacji zlecenia<input type="date" name="dateTo" class="form-control col-4 mb-4"></p>
+    <p style="color: black">Imię pacjenta<input type="text" name="patientName" class="form-control col-4 mb-4"></p>
+    <p style="color: black">Nazwisko pacjenta<input type="text" name="patientSurname" class="form-control col-4 mb-4"></p>
+    <label for="orderType">Rodzaj zlecenia</label>
+    <select name="orderType" id="orderType" class="form-control col-4 mb-4">
+      <option value="Dostawienie zęba lub klamry">Dostawienie zęba lub klamry</option>
+      <option value="Klamry doginane">Klamry doginane</option>
+      <option value="Klamry powlekane">Klamry powlekane</option>
+      <option value="Korona akrylowa tymczasowa">Korona akrylowa tymczasowa</option>
+      <option value="Korona kompozytowa">Korona kompozytowa</option>
+      <option value="Korona pełnoceramiczna">Korona pełnoceramiczna</option>
+      <option value="Korona porcelanowa na metalu">Korona porcelanowa na metalu</option>
+      <option value="Łyżki indywidualne (góra)">Łyżki indywidualne (góra)</option>
+      <option value="Łyżki indywidualne (dół)">Łyżki indywidualne (dół)</option>
+      <option value="Model diagnostyczny (góra)">Model diagnostyczny (góra)</option>
+      <option value="Model diagnostyczny (dół)">Model diagnostyczny (dół)</option>
+      <option value="Model roboczy (góra)">Model roboczy (góra)</option>
+      <option value="Model roboczy (dół)">Model roboczy (dół)</option>
+      <option value="Model roboczy wax-up (góra)">Model roboczy wax-up (góra)</option>
+      <option value="Model roboczy wax-up (dół)">Model roboczy wax-up (dół)</option>
+      <option value="Most adhezyjny kompozytowy">Most adhezyjny kompozytowy</option>
+      <option value="Most adhezyjny porcelanowy">Most adhezyjny porcelanowy</option>
+      <option value="Most akrylowy tymczasowy">Most akrylowy tymczasowy</option>
+      <option value="Most kompozytowy">Most kompozytowy</option>
+      <option value="Most Maryland">Most Maryland</option>
+      <option value="Most pełnoceramiczny">Most pełnoceramiczny</option>
+      <option value="Most porcelanowy na metalu">Most porcelanowy na metalu</option>
+      <option value="Nakład kompozytowy">Nakład kompozytowy</option>
+      <option value="Nakład porcelanowy">Nakład porcelanowy</option>
+      <option value="Peloty">Peloty</option>
+      <option value="Podbudowa cyrkonowa korony">Podbudowa cyrkonowa korony</option>
+      <option value="Podbudowa cyrkonowa mostu">Podbudowa cyrkonowa mostu</option>
+      <option value="Podbudowa metalowa korony">Podbudowa metalowa korony</option>
+      <option value="Podbudowa metalowa mostu">Podbudowa metalowa mostu</option>
+      <option value="Podścielenie protezy (górnej)">Podścielenie protezy (górnej)</option>
+      <option value="Podścielenie protezy (dolnej)">Podścielenie protezy (dolnej)</option>
+      <option value="Proteza acetalowa (góra)">Proteza acetalowa (góra)</option>
+      <option value="Proteza acetalowa (dół)">Proteza acetalowa (dół)</option>
+      <option value="Proteza akrylowa (góra)">Proteza akrylowa (góra)</option>
+      <option value="Proteza akrylowa (dół)">Proteza akrylowa (dół)</option>
+      <option value="Proteza nylonowa (góra)">Proteza nylonowa (góra)</option>
+      <option value="Proteza nylonowa (dół)">Proteza nylonowa (dół)</option>
+      <option value="Proteza szkieletowa (góra)">Proteza szkieletowa (góra)</option>
+      <option value="Proteza szkieletowa (dół)">Proteza szkieletowa (dół)</option>
+      <option value="Proteza woskowa przymiarka (góra)">Proteza woskowa przymiarka (góra)</option>
+      <option value="Proteza woskowa przymiarka (dół)">Proteza woskowa przymiarka (dół)</option>
+      <option value="Przymiarka szkieletu z zębami (góra)">Przymiarka szkieletu z zębami (góra)</option>
+      <option value="Przymiarka szkieletu z zębami (dół)">Przymiarka szkieletu z zębami (dół)</option>
+      <option value="Sklejenie protezy">Sklejenie protezy</option>
+      <option value="Szyna relaksacyjna miękko-twarda">Szyna relaksacyjna miękko-twarda</option>
+      <option value="Szyna repozycyjna twarda">Szyna repozycyjna twarda</option>
+      <option value="Wkład lany">Wkład lany</option>
+      <option value="Wkład z włókna szklanego">Wkład z włókna szklanego</option>
+      <option value="Wzmocnienie płyty protezy (górnej)">Wzmocnienie płyty protezy (górnej)</option>
+      <option value="Wzmocnienie płyty protezy (dolnej)">Wzmocnienie płyty protezy (dolnej)</option>
+      <option value="Wzorniki zwarciowe (góra)">Wzorniki zwarciowe (góra)</option>
+      <option value="Wzorniki zwarciowe (dół)">Wzorniki zwarciowe (dół)</option>
+      <option value="Zęby IVOCLAR">Zęby IVOCLAR</option>
+    </select>
+    <p style="color: black">Uwagi<input type="text" name="info"class="form-control col-4 mb-4"></p>
+    <label for="status">Status</label>
+    <select name="status" id="status" class="form-control col-4 mb-4">
+      <option value="W trakcie realizacji">W trakcie realizacji</option>
+    </select>
+    <!--<p><input type="submit" value="Zarezerwuj" style="background-color: #FD6B6B"/></p>-->
+    <button type="submit" class="btn col-2" style="background-color:  #9c638f">Dodaj zlecenie</button>
+  </form>
+</div>
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <div class="row mt-3">
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Linki</h6>
+          <p>
+            <a href="/" class="text-reset" style="color: black">Strefa pacjenta </a>
+          </p>
+        </div>
+
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-left">
+
+          <h6 class="text-uppercase fw-bold mb-4">Kontakt</h6>
+          <p><i class="fas fa-home me-3"></i> ul. Kaliskiego</p>
+          <p><i class="fas fa-home me-3"></i> 85-123 Bydgoszcz</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            E-mail: dentist@example.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i>Tel: +48 123 456 789</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</footer>
+</body>
+</html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gabinet stomatologiczny</title>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg" style="background-color: #ffbf80">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/" style="color: black">Gabinet stomatologiczny</a>
+    <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="waves-effect waves-light btn nav-link" href="/about" style="color: black;background-color:  #ffa64d">O mnie</a>
+        </li>
+        <li class="nav-item">
+          <a class="waves-effect waves-light btn nav-link" href="/pricelist" style="color: black;background-color:  #ffa64d">Cennik</a>
+        </li>
+        <li class="nav-item">
+          <a class="waves-effect waves-light btn nav-link" href="/contact" style="color: black;background-color:  #ffa64d">Kontakt</a>
+        </li>
+        <form action="https://www.znanylekarz.pl/szukaj?q=stomatolog&loc=Bydgoszcz&filters%5Bspecializations%5D%5B%5D=103">
+          <input class="waves-effect waves-light btn nav-link" type="submit" value="Umów wizytę" style="background-color:  #ff8000"/>
+        </form>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--Bookmarks-->
+<div class="inline" style="background-color:    burlywood; text-align: center">
+  <hr/>
+  <h4 style="text-align: center">Nawigacja cenika</h4>
+  <button onclick="location.href='#PL3'" style="background-color: antiquewhite" class="btn">Leczenie endodontyczne</button>
+  <button onclick="location.href='#PL6'" style="background-color: antiquewhite" class="btn">Protetyka</button>
+  <button onclick="location.href='#PL4'" style="background-color: antiquewhite" class="btn">Wypełnienia</button>
+  <button onclick="location.href='#PL5'" style="background-color: antiquewhite" class="btn">Zabiegi chirurgiczne</button>
+  <button onclick="location.href='#PL1'" style="background-color: antiquewhite" class="btn">Zabiegi, porady, periodontologia</button>
+  <button onclick="location.href='#PL2'" style="background-color: antiquewhite" class="btn">Zabiegi profilaktyczne i kosmetyczne</button>
+<hr/>
+</div>
+<!-- Price Table-->
+<table class="table">
+  <tbody>
+  <tr style="background-color: burlywood">
+    <td id="PL3" colspan="2" class="text-center">Leczenie endodontyczne</td>
+  </tr>
+  <tr>
+    <td>Dewitalizacja zęba bez znieczulenia</td>
+    <td>100.00</td>
+  </tr>
+  <tr>
+    <td>Dewitalizacja zęba w znieczuleniu</td>
+    <td>120.00</td>
+  </tr>
+  <tr>
+    <td>Dodatkowy kanał</td>
+    <td>150.00</td>
+  </tr>
+  <tr>
+    <td>Leczenie endodontyczne po dewitalizacji ząb jednokorzeniowy</td>
+    <td>350.00</td>
+  </tr>
+  <tr>
+    <td>Leczenie endodontyczne zęba z wypełnieniem 2 kanałów</td>
+    <td>450.00</td>
+  </tr>
+  <tr>
+    <td>Leczenie endodontyczne zęba z wypełnieniem 3 kanałów</td>
+    <td>600.00</td>
+  </tr>
+  <tr>
+    <td>Opatrunek leczniczy w trakcie leczenia endodontycznego</td>
+    <td>150.00</td>
+  </tr>
+  <tr>
+    <td>Opatrunek leczniczy w zębie stałym</td>
+    <td>100.00</td>
+  </tr>
+  <tr>
+    <td>Trepanacja zęba mlecznego</td>
+    <td>70.00</td>
+  </tr>
+  <tr style="background-color: burlywood">
+    <td id="PL6" colspan="2" class="text-center">Protetyka</td>
+  </tr>
+  <tr>
+    <td>Dodatkowa opłata za zęby IVOCLAR akryl</td>
+    <td>100.00</td>
+  </tr>
+  <tr>
+    <td>Dodatkowa opłata za zęby IVOCLAR kompozytowe</td>
+    <td>160.00</td>
+  </tr>
+  <tr>
+    <td>Dostawienie zęba/klamry</td>
+    <td>100.00</td>
+  </tr>
+  <tr>
+    <td>Korekta protezy wykonanej w innym gabinecie</td>
+    <td>70.00</td>
+  </tr>
+  <tr>
+    <td>Korona akrylowa</td>
+    <td>350.00</td>
+  </tr>
+  <tr>
+    <td>Korona metalowa</td>
+    <td>400.00</td>
+  </tr>
+  <tr>
+    <td>Korona metalowa licowana porcelana II wizyta</td>
+    <td>900.00</td>
+  </tr>
+  <tr>
+    <td>Korona metalowa licowana porcelana (w moście) II wizyta</td>
+    <td>800.00</td>
+  </tr>
+  <tr>
+    <td>Korona porcelanowa/licówka/nakład pełnoceramiczna II wizyta</td>
+    <td>1500.00</td>
+  </tr>
+  <tr>
+    <td>Korona porcelanowa pod protezę z zatrzaskiem</td>
+    <td>1000.00</td>
+  </tr>
+  <tr>
+    <td>Korona tymczasowa pod licówkę kompozyt/nakład/endokoronę</td>
+    <td>250.00</td>
+  </tr>
+  <tr>
+    <td>Licówka kompozytowa/nakład/endokorona II wizyta</td>
+    <td>550.00</td>
+  </tr>
+  <tr>
+    <td>MOCK UP - wizualizacja w ustach pacjenta</td>
+    <td>300.00</td>
+  </tr>
+  <tr>
+    <td>Naprawa natychmiastowa</td>
+    <td>120.00</td>
+  </tr>
+  <tr>
+    <td>Następna usługa protetyczna</td>
+    <td>50.00</td>
+  </tr>
+  <tr>
+    <td>Opłata za akryl wstrzykiwane (stabilność koloru wytrzymałość)</td>
+    <td>200.00</td>
+  </tr>
+  <tr>
+    <td>Planowanie leczenia z wyciskami diagnostycznymi</td>
+    <td>150.00</td>
+  </tr>
+  <tr>
+    <td>Podścielenie protezy</td>
+    <td>180.00</td>
+  </tr>
+  <tr>
+    <td>Praca z łukiem twarzowym</td>
+    <td>250.00</td>
+  </tr>
+  <tr>
+    <td>Proteza acetalowa/elasyczna nylonowa II wizyta</td>
+    <td>1800.00</td>
+  </tr>
+  <tr>
+    <td>Proteza biofunkcjonalna</td>
+    <td>1500.00</td>
+  </tr>
+  <tr>
+    <td>Proteza całkowita</td>
+    <td>900.00</td>
+  </tr>
+  <tr>
+    <td>Proteza całkowita natychmiastowa</td>
+    <td>1000.00</td>
+  </tr>
+  <tr>
+    <td>Proteza częściowa do 5 zębów</td>
+    <td>650.00</td>
+  </tr>
+  <tr>
+    <td>Proteza częściowa powyżej 5 zębów</td>
+    <td>800.00</td>
+  </tr>
+  <tr>
+    <td>Proteza jednozębowa</td>
+    <td>400.00</td>
+  </tr>
+  <tr>
+    <td>Proteza szkieletowa II wizyta</td>
+    <td>1800.00</td>
+  </tr>
+  <tr>
+    <td>Proteza szkieletowa na zatrzasku</td>
+    <td>2000.00</td>
+  </tr>
+  <tr>
+    <td>Sklejenie protezy</td>
+    <td>100.00</td>
+  </tr>
+  <tr>
+    <td>WAX UP wizualizacja na modelu + podniesienie zwarcia</td>
+    <td>300.00</td>
+  </tr>
+  <tr>
+    <td>WAX UP wizualizacja na modelu - za łuk</td>
+    <td>200.00</td>
+  </tr>
+  <tr>
+    <td>Wklejenie korony wykonanej poza gabinetem</td>
+    <td>100.00</td>
+  </tr>
+  <tr>
+    <td>Wyciski anatomiczne przed protezami osiadającymi</td>
+    <td>350.00</td>
+  </tr>
+  <tr>
+    <td>Wyciski pod protezę acetylową lub nylonową i szkieletową/licówkę, koronę pełnoceramiczną, nakład</td>
+    <td>500.00</td>
+  </tr>
+  <tr>
+    <td>Wymiana matrycy w protezie na zatrzaskach</td>
+    <td>200.00</td>
+  </tr>
+  <tr>
+    <td>Wzmocnienie protezy górnej</td>
+    <td>120.00</td>
+  </tr>
+  <tr>
+    <td>Wzmocnienie protezy dolnej</td>
+    <td>100.00</td>
+  </tr>
+  <tr>
+    <td>Zatrzask w protezie</td>
+    <td>400.00</td>
+  </tr>
+  <tr>
+    <td>Zdjęcie korony</td>
+    <td>120.00</td>
+  </tr>
+  <tr>
+    <td>Zdjęcie mostu</td>
+    <td>250.00</td>
+  </tr>
+  <tr style="background-color: burlywood">
+  <td id="PL4" colspan="2" class="text-center">Wypełnienia</td>
+  </tr>
+  <tr>
+    <td>Fluoryzacja na łyżkach</td>
+    <td>100.00</td>
+  </tr>
+  <tr>
+    <td>Licowanie/odbudowa zęba</td>
+    <td>280.00</td>
+  </tr>
+  <tr>
+    <td>Most adhezyjny uzupełnienie przedtrzonowca</td>
+    <td>1000.00</td>
+  </tr>
+  <tr>
+    <td>Most adhezyjny uzupełnienie trzonowca</td>
+    <td>1100.00</td>
+  </tr>
+  <tr>
+    <td>Odbudowa kąta siecznego</td>
+    <td>250.00</td>
+  </tr>
+  <tr>
+    <td>Piaskowanie</td>
+    <td>200.00</td>
+  </tr>
+  <tr>
+    <td>Piaskowanie + fluoryzacja</td>
+    <td>250.00</td>
+  </tr>
+  <tr>
+    <td>Wkład koronowo-korzeniowy (włókno szklane)</td>
+    <td>200.00</td>
+  </tr>
+  <tr>
+    <td>Wkład koronowy z zatrzaskiem</td>
+    <td>550.00</td>
+  </tr>
+  <tr>
+    <td>Wkład odlewany dzielony</td>
+    <td>450.00</td>
+  </tr>
+  <tr>
+    <td>Wkład odlewany koronowo-korzeniowy (włókno szklane, metalowy)</td>
+    <td>350.00</td>
+  </tr>
+  <tr>
+    <td>Wycisk pod most adhezyjny</td>
+    <td>400.00</td>
+  </tr>
+  <tr>
+    <td>Wypełnienie glasjonomerowe/chemoutwardzalne</td>
+    <td>150.00</td>
+  </tr>
+  <tr>
+    <td>Wypełnienie materiałem światłoutwardzalnym duże</td>
+    <td>200.00</td>
+  </tr>
+  <tr>
+    <td>Wypełnienie materiałem światłoutwardzalnym średnie</td>
+    <td>160.00</td>
+  </tr>
+  <tr>
+    <td>Wypełnienie zęba mlecznego</td>
+    <td>120.00</td>
+  </tr>
+  <tr>
+    <td>Zastosowanie preparatu Icon za 1 ząb</td>
+    <td>150.00</td>
+  </tr>
+  <tr style="background-color: burlywood">
+    <td id="PL5" colspan="2" class="text-center">Zabiegi chirurgiczne</td>
+  </tr>
+  <tr>
+    <td>Dłutowanie zęba</td>
+    <td>250.00</td>
+  </tr>
+  <tr>
+    <td>Nacięcie ropnia</td>
+    <td>100.00</td>
+  </tr>
+  <tr>
+    <td>Szycie rany</td>
+    <td>80.00</td>
+  </tr>
+  <tr>
+    <td>Usunięcie zęba jednokorzeniowego paradontalnego</td>
+    <td>100.00</td>
+  </tr>
+  <tr>
+    <td>Usunięcie zęba jednokorzeniowego ze znieczuleniem</td>
+    <td>150.00</td>
+  </tr>
+  <tr>
+    <td>Usunięcie zęba mlecznego</td>
+    <td>100.00</td>
+  </tr>
+  <tr>
+    <td>Usunięcie zęba wielokorzeniowego ze znieczuleniem</td>
+    <td>200.00</td>
+  </tr>
+  <tr>
+    <td>Zębodół po ekstrakcji w innym gabinecie</td>
+    <td>50.00</td>
+  </tr>
+  <tr style="background-color: burlywood">
+    <td id="PL1" colspan="2" class="text-center">Zabiegi, porady, periodontologia</td>
+  </tr>
+  <tr>
+    <td>Główka turbinowa</td>
+    <td>20.00</td>
+  </tr>
+  <tr>
+    <td>Porada/badanie jamy ustnej</td>
+    <td>50.00</td>
+  </tr>
+  <tr>
+    <td>Scaling - szczęka</td>
+    <td>80.00</td>
+  </tr>
+  <tr>
+    <td>Scaling - żuchwa</td>
+    <td>100.00</td>
+  </tr>
+  <tr>
+    <td>Scaling + piaskowanie</td>
+    <td>250.00</td>
+  </tr>
+  <tr>
+    <td>Scaling + znoszenie nadwrażliwości lakierem światłoutwardzalnym za 1 łuk zębowy</td>
+    <td>150.00</td>
+  </tr>
+  <tr>
+    <td>Szyna relaksacyjna indywidualna</td>
+    <td>400.00</td>
+  </tr>
+  <tr>
+    <td>Szynowanie materiałem kompozycyjnym</td>
+    <td>250.00</td>
+  </tr>
+  <tr>
+    <td>Szynowanie włóknem szklanym</td>
+    <td>350.00</td>
+  </tr>
+  <tr>
+    <td>Wizyta adaptacyjna u dzieci</td>
+    <td>50.00</td>
+  </tr>
+  <tr>
+    <td>Wystawienie zwolnienia/zaświadczenia lekarskiego</td>
+    <td>50.00</td>
+  </tr>
+  <tr>
+    <td>Znieczulenie cienkoigłowe</td>
+    <td>20.00</td>
+  </tr>
+  <tr style="background-color: burlywood">
+    <td id="PL2" colspan="2" class="text-center">Zabiegi profilaktyczne i kosmetyczne</td>
+  </tr>
+  <tr>
+    <td>Impregnacja za 1 ząb</td>
+    <td>10.00</td>
+  </tr>
+  <tr>
+    <td>Lakierowanie zębów/preparat do wybielenia, fluoryzacja na łyżkach</td>
+    <td>150.00</td>
+  </tr>
+  <tr>
+    <td>Lakowanie za 1 ząb</td>
+    <td>80.00</td>
+  </tr>
+  <tr>
+    <td>Usunięcie złamanego wkładu</td>
+    <td>150.00</td>
+  </tr>
+  <tr>
+    <td>Wybielenie pojedynczego zęba żywego</td>
+    <td>50.00</td>
+  </tr>
+  <tr>
+    <td>Wybielanie profesjonalne w gabinecie za jeden łuk zębowy</td>
+    <td>400.00</td>
+  </tr>
+  <tr>
+    <td>Wybielanie zęba po leczeniu endodontycznym</td>
+    <td>200.00</td>
+  </tr>
+  <tr>
+    <td>Wybielanie zębów za jeden łuk zębowy szyna standardowa</td>
+    <td>450.00</td>
+  </tr>
+  <tr>
+    <td>Zamknięcie perforacji</td>
+    <td>150.00</td>
+  </tr>
+  <tr>
+    <td>Znoszenie nadwrażliwości zębów preparatem światłoutwardzalnym za 1 łuk zębowy</td>
+    <td>150.00</td>
+  </tr>
+  <tr>
+    <td>Znoszenie nadwrażliwości zębów preparatem światłoutwardzalnym za 1 ząb</td>
+    <td>20.00</td>
+
+
+  </tbody>
+</table>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <div class="row mt-3">
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Linki</h6>
+          <p>
+            <a href="/login" class="text-reset" style="color: black">Strefa pracownika </a>
+          </p>
+        </div>
+
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-left">
+
+          <h6 class="text-uppercase fw-bold mb-4">Kontakt</h6>
+          <p><i class="fas fa-home me-3"></i> ul. Kaliskiego</p>
+          <p><i class="fas fa-home me-3"></i> 85-123 Bydgoszcz</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            E-mail: dentist@example.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i>Tel: +48 123 456 789</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</footer>
+</body>
+</html>

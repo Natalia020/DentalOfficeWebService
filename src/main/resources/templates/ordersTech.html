@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel technika - zlecenia od stomatologa</title>
+    <link th:href="@{static}" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .column {
+            flex: 50%;
+            padding: 10px;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg" style="background-color: #b3ccff">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/technician" style="color: black">Panel technika - zlecenia od stomatologa</a>
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="waves-effect waves-light btn nav-link" href="/ordersTech" style="color: black;background-color: #80aaff">Zlecenia od stomatologa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="waves-effect waves-light btn nav-link" href="/logout" style="color: black;background-color: #80aaff">Wyloguj się</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--Search Panel-->
+<p></p>
+<div class="container">
+    <div class="form-inline justify-content-center">
+        <form method="GET" th:action="@{ordersTech}">
+            <input type="text" class="form-control" id="txtSearch" name="parameter" placeholder="Szukaj zlecenia...">
+            <button type="submit" class="btn" style="background-color:  #beccb3">Szukaj</button>
+        </form>
+    </div>
+</div>
+<p></p>
+<!-- Orders List -->
+<nav class="nav flex-column" style="background-color: #e2e8dd">
+    <!--<h2 style="color: black">Rezerwacje</h2>-->
+    <table border="1">
+        <tr>
+            <th style="color: black; background-color: #beccb3">Data dodania zlecenia</th>
+            <th style="color: black; background-color: #beccb3">Termin realizacji zlecenia</th>
+            <th style="color: black; background-color: #beccb3">Imię pacjenta</th>
+            <th style="color: black; background-color: #beccb3">Nazwisko pacjenta</th>
+            <th style="color: black; background-color: #beccb3">Rodzaj zlecenia</th>
+            <th style="color: black; background-color: #beccb3">Uwagi</th>
+            <th style="color: black; background-color: #beccb3">Status</th>
+            <th style="color: black; background-color: #beccb3">Moderator</th>
+            <th style="color: black; background-color: #beccb3"></th>
+        </tr>
+        <tr th:each = "Orders: ${ordersTech}">
+            <td th:text="${Orders.DateFrom}" style="color: black"/>
+            <td th:text="${Orders.DateTo}" style="color: black"/>
+            <td th:text="${Orders.PatientName}" style="color: black"/>
+            <td th:text="${Orders.PatientSurname}" style="color: black"/>
+            <td th:text="${Orders.OrderType}" style="color: black"/>
+            <td th:text="${Orders.Info}" style="color: black"/>
+            <td th:text="${Orders.Status}" style="color: black"/>
+            <td th:text="${Orders.getUsername}" style="color: black"/>
+           <td><a th:href="@{/changeOrderStatusForm(orderId=${Orders.Id})}" class="btn" style="background-color: #abc9d4; color: black">Zmień status</a></td>
+        </tr>
+    </table>
+</nav>
+<!--Pagination-->
+<p></p>
+<nav aria-label="Page navigation example" id="pageNo">
+    <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" style="background-color: #b3ccff; color: black" href="/ordersTech1">1</a></li>
+        <li class="page-item"><a class="page-link" style="background-color: #b3ccff; color: black" href="/ordersTech2">2</a></li>
+        <li class="page-item"><a class="page-link" style="background-color: #b3ccff; color: black" href="/ordersTech3">3</a></li>
+        <li class="page-item"><a class="page-link" style="background-color: #b3ccff; color: black" href="/ordersTech4">4</a></li>
+        <li class="page-item"><a class="page-link" style="background-color: #b3ccff; color: black" href="/ordersTech5">5</a></li>
+        <li class="page-item"><a class="page-link" style="background-color: #b3ccff; color: black" href="/ordersTech6">6</a></li>
+        <li class="page-item"><a class="page-link" style="background-color: #b3ccff; color: black" href="/ordersTech7">7</a></li>
+        <li class="page-item"><a class="page-link" style="background-color: #b3ccff; color: black" href="/ordersTech8">8</a></li>
+        <li class="page-item"><a class="page-link" style="background-color: #b3ccff; color: black" href="/ordersTech9">9</a></li>
+        <li class="page-item"><a class="page-link" style="background-color: #b3ccff; color: black" href="/ordersTech10">10</a></li>
+        <li class="page-item"><a class="page-link" style="background-color: #b3ccff; color: black" href="/ordersTech11">11</a></li>
+        <li class="page-item"><a class="page-link" style="background-color: #b3ccff; color: black" href="/ordersTech12">12</a></li>
+    </ul>
+</nav>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+    <section class="">
+        <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Linki</h6>
+                    <p>
+                        <a href="/" class="text-reset" style="color: black">Strefa pacjenta </a>
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-left">
+
+                    <h6 class="text-uppercase fw-bold mb-4">Kontakt</h6>
+                    <p><i class="fas fa-home me-3"></i> ul. Kaliskiego</p>
+                    <p><i class="fas fa-home me-3"></i> 85-123 Bydgoszcz</p>
+                    <p>
+                        <i class="fas fa-envelope me-3"></i>
+                        E-mail: dentist@example.com
+                    </p>
+                    <p><i class="fas fa-phone me-3"></i>Tel: +48 123 456 789</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+</body>
+</html>

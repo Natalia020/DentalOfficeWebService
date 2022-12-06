@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gabinet stomatologiczny</title>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg" style="background-color: #ffbf80">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/" style="color: black">Gabinet stomatologiczny</a>
+    <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="waves-effect waves-light btn nav-link" href="/about" style="color: black;background-color:  #ffa64d">O mnie</a>
+        </li>
+        <li class="nav-item">
+          <a class="waves-effect waves-light btn nav-link" href="/pricelist" style="color: black;background-color:  #ffa64d">Cennik</a>
+        </li>
+        <li class="nav-item">
+          <a class="waves-effect waves-light btn nav-link" href="/contact" style="color: black;background-color:  #ffa64d">Kontakt</a>
+        </li>
+        <form action="https://www.znanylekarz.pl/szukaj?q=stomatolog&loc=Bydgoszcz&filters%5Bspecializations%5D%5B%5D=103">
+          <input class="waves-effect waves-light btn nav-link" type="submit" value="Umów wizytę" style="background-color:  #ff8000"/>
+        </form>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--Google map and contact info-->
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 500px">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2393.1459597909457!2d18.130668751369004!3d53.143474979838494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4703167b1659acf7%3A0xd1fcdc797d22fe88!2sProfesora%20Sylwestra%20Kaliskiego%2C%20Bydgoszcz!5e0!3m2!1spl!2spl!4v1662404738088!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+    <div class="col-sm">
+      <h4>Adres</h4>
+      <p>ul. Kaliskiego</p>
+      <p>85-123 Bydgoszcz</p>
+      <h4>Kontakt</h4>
+      <p>E-mail: dentist@example.com</p>
+      <p>Tel: +48 123 456 789</p>
+      <h4>Godziny otwarcia</h4>
+      <p>Pn-Pt: 08:00-18:00</p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <div class="row mt-3">
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Linki</h6>
+          <p>
+            <a href="/login" class="text-reset" style="color: black">Strefa pracownika </a>
+          </p>
+        </div>
+
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-left">
+
+          <h6 class="text-uppercase fw-bold mb-4">Kontakt</h6>
+          <p><i class="fas fa-home me-3"></i> ul. Kaliskiego</p>
+          <p><i class="fas fa-home me-3"></i> 85-123 Bydgoszcz</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            E-mail: dentist@example.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i>Tel: +48 123 456 789</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</footer>
+</body>
+</html>
