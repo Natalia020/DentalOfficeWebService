@@ -111,7 +111,6 @@ public class AdminController {
     public String saveProduct(@RequestParam(value = "id", required = false) Long id,
                               @RequestParam("storeType") String storeType,
                               @RequestParam("Quantity") int Quantity){
-            /*@RequestParam("users") Users users*/
 
         Store store = storeService.updateStore(id, storeType, Quantity);
         System.out.println(store);
