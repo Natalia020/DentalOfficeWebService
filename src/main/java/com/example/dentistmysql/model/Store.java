@@ -1,13 +1,10 @@
 package com.example.dentistmysql.model;
-
 import com.sun.istack.NotNull;
 import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-
 import javax.persistence.*;
 import java.io.Serializable;
-
 @Entity
 @Data
 @AllArgsConstructor
@@ -28,7 +25,7 @@ public class Store implements Serializable {
     @Column(name = "Quantity")
     private int Quantity;
 
-    @NotNull
+    //@NotNull
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Users users;

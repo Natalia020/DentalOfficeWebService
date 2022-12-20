@@ -27,15 +27,6 @@ public class TechnicianController {
     @Autowired
     OrdersRepository ordersRepository;
 
-
-    /*@RequestMapping("/ordersTech")
-    @PreAuthorize("hasAuthority('ROLE_USER')")
-    public String ordersPage(Model model) {
-        model.addAttribute("ordersTech", raportService.getAllRaports());
-
-        return "ordersTech";
-    }*/
-
     @RequestMapping(value = "/technician", method = RequestMethod.GET)
     @PreAuthorize("hasAuthority('ROLE_TECHNICIAN')")
     public String technicianPage() {return "technician";}

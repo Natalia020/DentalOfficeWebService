@@ -103,11 +103,6 @@ public class AdminController {
 
     @PostMapping("/saveProduct")
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
-    /*public String saveProduct(@ModelAttribute Store store) {
-        storeRepository.save(store);
-        return "redirect:/storeAdmin";
-    }*/
-
     public String saveProduct(@RequestParam(value = "id", required = false) Long id,
                               @RequestParam("storeType") String storeType,
                               @RequestParam("Quantity") int Quantity){

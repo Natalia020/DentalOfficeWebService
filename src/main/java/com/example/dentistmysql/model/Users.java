@@ -8,6 +8,7 @@ import java.io.Serializable;
 
 @Entity
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -35,8 +36,7 @@ public class Users implements Serializable {
     @NotNull
     @Column(name = "Role")
     private String role;
-
-
-
-
 }
+
+
+
