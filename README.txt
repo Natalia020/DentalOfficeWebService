@@ -1,4 +1,4 @@
-Engineering thesis - a web service supporting the operation of a dental office from the perspective of four users.
+A web service supporting the operation of a dental office from the perspective of four users.
 The backend was created with the Java programming language and the Spring Boot framework.
 The graphical user interface was designed using HTML and CSS with the Thymeleaf component.
 Login is secured thanks to the Spring Security component.
